@@ -72,8 +72,37 @@ ul li {
 	}
 }
 @media (max-width: 576px) {
+	body {
+		position: static;
+	}
+	.header-logo {
+		top: 15px;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		align-items: center;
+	}
+	.header-logo img {
+		height: 60px;
+	}
+	h1 {
+		font-size: 2rem;
+		margin-left: 20px;
+	}
+	.main {
+		margin: 20px auto 0 auto;
+	}
 	.App {
 		width: 75vw;
+		height: 450px;
+		padding: 30px;
+	}
+	.App img {
+		width: 150px;
+		height: 150px;
+	}
+	ul li {
+		font-size: 15px;
 	}
 }
 span {
