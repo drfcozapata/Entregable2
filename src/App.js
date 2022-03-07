@@ -1,17 +1,28 @@
-// import axios from 'axios';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
-import Weather from './components/Weather';
 import Header from './components/Header';
+import Loading from './components/Loading';
+import Weather from './components/Weather';
 
 function App() {
-	return (
-		<Fragment>
-			<Header />
-			<Weather />
-		</Fragment>
-	);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 3000);
+	}, []);
+
+	if (loading) {
+		return <Loading />;
+	} else {
+		return (
+			<Fragment>
+				<Header />
+				<Weather />
+			</Fragment>
+		);
+	}
 }
 
-// api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 export default App;
